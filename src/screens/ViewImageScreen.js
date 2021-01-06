@@ -1,16 +1,24 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
-import colorsConfig from '../config/colorsConfig';
+import colors from '../config/colors';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const ViewImageScreen = (props) => {
     return (
         <View style={styles.container}>
             <View style={styles.closeIcon}>
-                <MaterialCommunityIcons name="close" color='white' size={35} />
+                <MaterialCommunityIcons 
+                    name="close" 
+                    color={colors.quinary} 
+                    size={37} 
+                />
             </View>
             <View style={styles.deleteIcon}>
-                <MaterialCommunityIcons name="trash-can" color='white' size={35} />
+                <MaterialCommunityIcons 
+                    name="trash-can" 
+                    color={colors.quinary} 
+                    size={37} 
+                />
             </View>
             <Image 
                 resizeMode="contain" 
@@ -28,7 +36,7 @@ const styles = StyleSheet.create({
         top:40,         
     },
     container: {
-        backgroundColor: colorsConfig.primary,
+        backgroundColor: colors.primary,
         flex: 1,
     },
     deleteIcon: {

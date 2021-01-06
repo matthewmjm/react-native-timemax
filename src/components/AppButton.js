@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
-import colorsConfig from '../config/colorsConfig';
+import colors from '../config/colors';
 
 const AppButton = ({color = "secondary", onPress, title}) => {
     return (
         <TouchableOpacity 
-            style={[styles.button, {backgroundColor: colorsConfig[color]}]} 
+            style={[styles.button, {backgroundColor: colors[color]}]} 
             onPress={onPress} 
         >
             <Text style={styles.text}>{title}</Text>
@@ -16,7 +16,7 @@ const AppButton = ({color = "secondary", onPress, title}) => {
 const styles = StyleSheet.create({
     button: {
         alignItems: 'center',
-        backgroundColor: colorsConfig.tertiary,
+        backgroundColor: colors.tertiary,
         borderRadius: 25,
         justifyContent: 'center',
         padding: 15,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         marginVertical: 6,
     },
     text: {
-        color: colorsConfig.white,
+        color: colors.white,
         fontSize: 18,
         textTransform: 'uppercase',
         fontWeight: 'bold',
@@ -32,5 +32,3 @@ const styles = StyleSheet.create({
 });
 
 export default AppButton;
-
-// title="Login" onPress={() => console.log("pressedTHE appButton!")}

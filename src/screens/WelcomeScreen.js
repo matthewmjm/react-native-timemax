@@ -1,7 +1,8 @@
 import React from 'react';
-import { Image, ImageBackground, Platform, StyleSheet, Text, View } from 'react-native';
-import colorsConfig from '../config/colorsConfig';
+import { Image, ImageBackground, Platform, StyleSheet, View } from 'react-native';
+import colors from '../config/colors';
 import AppButton from '../components/AppButton';
+import AppText from '../components/AppText';
 
 const WelcomeScreen = (props) => {
     return (
@@ -15,7 +16,7 @@ const WelcomeScreen = (props) => {
                     style={styles.logo} 
                     source={require('../assets/icon-logo.jpg')} 
                 />
-                <Text style={styles.landingText}>TIME MAXIMIZER</Text>
+                <AppText style={styles.landingText}>TIME MAXIMIZER</AppText>
             </View>
             <View style={styles.buttonsContainer}>
                 <AppButton title="Login" ></AppButton>
@@ -44,8 +45,7 @@ const styles = StyleSheet.create({
         top: 100,
     },
     landingText: {
-        color: colorsConfig.primary,
-        fontFamily: Platform.OS === 'android' ? 'Roboto' : 'Futura',
+        color: colors.primary,
         fontSize: 40,
         fontWeight: 'bold',
     },
