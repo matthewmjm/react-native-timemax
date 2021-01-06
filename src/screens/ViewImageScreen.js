@@ -1,12 +1,17 @@
 import React from 'react';
 import { Image, StyleSheet, View } from 'react-native';
 import colorsConfig from '../config/colorsConfig';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 const ViewImageScreen = (props) => {
     return (
         <View style={styles.container}>
-            <View style={styles.closeIcon}></View>
-            <View style={styles.deleteIcon}></View>
+            <View style={styles.closeIcon}>
+                <MaterialCommunityIcons name="close" color='white' size={35} />
+            </View>
+            <View style={styles.deleteIcon}>
+                <MaterialCommunityIcons name="trash-can" color='white' size={35} />
+            </View>
             <Image 
                 resizeMode="contain" 
                 style={styles.image}
@@ -18,30 +23,18 @@ const ViewImageScreen = (props) => {
 
 const styles = StyleSheet.create({
     closeIcon: {
-        backgroundColor: colorsConfig.tertiary,
-        height: 50,
         left: 30,
         position: "absolute",
-        top:40, 
-        width: 50,        
-        shadowColor: "grey",
-        shadowOffset: { width: 5, height: 5},
-        shadowOpacity: .5,
+        top:40,         
     },
     container: {
         backgroundColor: colorsConfig.primary,
         flex: 1,
     },
     deleteIcon: {
-        backgroundColor: colorsConfig.quaternary,
-        height: 50,
         position: "absolute",
         right: 30,
         top:40, 
-        width: 50,
-        shadowColor: "grey",
-        shadowOffset: { width: 5, height: 5},
-        shadowOpacity: .5,
     },
     image: {
         width: '100%',
