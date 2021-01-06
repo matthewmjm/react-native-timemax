@@ -1,10 +1,12 @@
 import React from 'react';
 import { Image, ImageBackground, Platform, StyleSheet, Text, View } from 'react-native';
 import colorsConfig from '../config/colorsConfig';
+import AppButton from '../components/AppButton';
 
 const WelcomeScreen = (props) => {
     return (
         <ImageBackground
+            blurRadius={2}
             style={styles.background}
             source={require('../assets/landing.jpg')}
         >
@@ -15,8 +17,10 @@ const WelcomeScreen = (props) => {
                 />
                 <Text style={styles.landingText}>TIME MAXIMIZER</Text>
             </View>
-            <View style={styles.loginButton}></View>
-            <View style={styles.registerButton}></View>
+            <View style={styles.buttonsContainer}>
+                <AppButton title="Login" ></AppButton>
+                <AppButton title="Register" color="quaternary" ></AppButton>
+            </View>
         </ImageBackground>
     );
 };
@@ -27,9 +31,8 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'flex-end',
     },
-    loginButton: {
-        backgroundColor: '#101D42',
-        height: 75,
+    buttonsContainer: {
+        padding: 20,
         width: '100%',
     },
     logo: {
@@ -39,11 +42,6 @@ const styles = StyleSheet.create({
     logoContainer: {
         position: 'absolute',
         top: 100,
-    },
-    registerButton: {
-        backgroundColor: '#0D1317',
-        height: 75,
-        width: '100%',
     },
     landingText: {
         color: colorsConfig.primary,
